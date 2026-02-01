@@ -20,7 +20,7 @@ namespace Patterns
 
         public static void RightAngle(int n)
         {
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j <= i; j++)
                     Console.Write("*");
@@ -30,7 +30,7 @@ namespace Patterns
 
         public static void RightAngleNumbers(int n)
         {
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j <= i; j++)
                     Console.Write(j+1);
@@ -50,12 +50,46 @@ namespace Patterns
 
         public static void ReverseRightAngle(int n)
         {
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
-                for(int j = n; j > i; j--)
+                for (int j = n; j > i; j--)
                     Console.Write('*');
                 Console.WriteLine();
-            }    
+            }
+        }
+
+        public static void ReverseRightAngleNumbers(int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < (n-i); j++)
+                    Console.Write(j+1);
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintTraingle(int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < (n-i); j++)
+                    Console.Write(" ");
+                for (int k = 0; k < (i*2+1); k++)
+                    Console.Write("*");
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintMirrorImageTraingle(int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < i; j++)
+                    Console.Write(" ");
+                for (int k = 0; k < (2*n - (2*i+1)); k++)
+                    Console.Write('*');
+                Console.WriteLine();
+            }
         }
     }
 }
