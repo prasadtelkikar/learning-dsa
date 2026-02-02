@@ -5,7 +5,7 @@
         public static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine()!);
-            PatternPrinter.ReverseRightAngle(n);
+            PatternPrinter.PrintEmptyTraingleInBetween(n);
             Console.ReadKey();
         }
     }

@@ -91,5 +91,79 @@ namespace Patterns
                 Console.WriteLine();
             }
         }
+
+        public static void PrintPartialDiamand(int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                    Console.Write('*');
+                Console.WriteLine();
+            }
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < (n-i-1); j++)
+                    Console.Write('*');
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintFullDiamand(int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < (n-i-1); j++)
+                    Console.Write(' ');
+                for (int k = 0; k < (2*i+1); k++)
+                    Console.Write('*');
+                Console.WriteLine();
+            }
+            for (int i = 1; i < n; i++)
+            {
+                for (int j = 0; j < i; j++)
+                    Console.Write(' ');
+                for (int k = 0; k < (2*n - (2*i+1)); k++)
+                    Console.Write('*');
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintBinaryRightAngle(int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < n; j++)
+                {
+                    char bit = (i + j) % 2 == 0 ? '1' : '0';
+                    Console.Write(bit);
+                }
+                Console.WriteLine();
+            }
+        }
+        
+        public static void PrintEmptyTraingleInBetween(int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                    Console.Write(j+1);
+                for (int k = 0; k < (2*n - 2*(i+1)); k++)
+                    Console.Write('*');
+                for(int l = (i+1); l > 0; l--)
+                    Console.Write(l);
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintIncrementalRightAngle(int n)
+        {
+            int counter = 1;
+            for(int i = 0; i <= n; i++)
+            {
+                for (int j = 0; j < i; j++)
+                    Console.Write($"{counter++} ");
+                Console.WriteLine();
+            }
+        }
     }
 }
