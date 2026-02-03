@@ -165,5 +165,35 @@ namespace Patterns
                 Console.WriteLine();
             }
         }
+
+        public static void PrintAlphabetsInRightAngleTraingle(int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                for(char ch = 'A'; ch <= 'A'+i; ch++)
+                    Console.Write(ch);
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintAlphabetInReverseRightAngleTraingle(int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                for (char ch = 'A'; ch < 'A'+(n-i); ch++)
+                    Console.Write(ch);
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintAlphabetInRowRightAngleTraingle(int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                    Console.Write((char)('A'+i));
+                Console.WriteLine();
+            }
+        }
     }
 }
