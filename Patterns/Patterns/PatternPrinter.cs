@@ -195,5 +195,103 @@ namespace Patterns
                 Console.WriteLine();
             }
         }
+
+        public static void PrintSymmatricVoidPattern(int n)
+        {
+            int spaces = 0;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < (n-i); j++)
+                    Console.Write('*');
+                for (int k = 0; k < spaces; k++)
+                    Console.Write(' ');
+                for (int l = 0; l < (n-i); l++)
+                    Console.Write('*');
+                spaces += 2;
+                Console.WriteLine();
+            }
+            spaces -= 2;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                    Console.Write('*');
+                for (int k = 0; k < spaces; k++)
+                    Console.Write(' ');
+                for (int l = 0; l <= i; l++)
+                    Console.Write('*');
+                spaces -= 2;
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintSymmatricButterflyPattern(int n)
+        {
+            int spaces = (n-1) * 2;
+            for(int i = 0; i < n; i++)
+            {
+                for (int j = 0; j <=i; j++)
+                    Console.Write('*');
+                for (int k = 0; k < spaces; k++)
+                    Console.Write(' ');
+                for (int l = 0; l <= i; l++)
+                    Console.Write('*');
+
+                spaces -= 2;
+                Console.WriteLine();
+            }
+            spaces = 2;
+            for(int i = 1;i < n; i++)
+            {
+                for (int j = 0; j < (n-i); j++)
+                    Console.Write('*');
+                for (int k = 0; k < spaces; k++)
+                    Console.Write(' ');
+                for (int l = 0; l < (n-i); l++)
+                    Console.Write('*');
+
+                spaces += 2;
+                Console.WriteLine();
+            }
+        }
+        public static void PrintNumberPattern(int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < n; j++)
+                {
+                    if(i == 0 || i == n-1)
+                        Console.Write('*');
+                    else if (j == 0 || j == n-1)
+                        Console.Write('*');
+                    else
+                        Console.Write(' ');                        
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintNumberBoxPattern(int n)
+        {
+            int size = 2*n - 1;
+            for(int i = 0; i < size; i++)
+            {
+                for(int j = 0; j < size; j++)
+                {
+                    int top = i;
+                    int bottom = (size - 1) - i;
+
+                    int left = j;
+                    int right = (size - 1) - j;
+
+                    int value = n - Math.Min(
+                        Math.Min(top, bottom), 
+                        Math.Min(right, left));
+
+                    Console.Write(value);
+                }
+                Console.WriteLine();
+            }
+        }
+        
     }
 }
