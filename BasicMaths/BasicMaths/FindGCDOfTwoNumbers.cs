@@ -41,9 +41,9 @@ namespace BasicMaths
         {
             while(n2 != 0)
             {
-                int reminder = n1 % n2;
+                int rem = n1 % n2;
                 n1 = n2;
-                n2 = reminder;
+                n2 = rem;
             }
 
             return n1;
